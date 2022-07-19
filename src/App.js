@@ -6,6 +6,8 @@ import ProductCard from "./ProductCard";
 
 function App() {
   const [products, setProducts] = useState([]);
+
+  // function to fetch all products details from API
   const fetchProducts = () => {
     axios
       .get("https://dummyjson.com/products")
@@ -16,19 +18,23 @@ function App() {
       .catch((error) => console.log(error));
   };
 
+  // call fetchProducts method with the help of useEffect
   useEffect(() => {
     fetchProducts();
   }, []);
-  // console.log(products);
+
+  const displayProducts = products.map((product, index) => {
+    return <ProductCard product={product} key={index} />;
+  });
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello World!</h1>
+        <center>
+          <h1>Hello World!</h1>
+        </center>
 
-        {products.map((product, index) => {
-          return <ProductCard product={product} key={index}></ProductCard>;
-        })}
+        {displayProducts}
       </header>
     </div>
   );
