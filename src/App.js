@@ -7,10 +7,15 @@ import ProductCard from "./ProductCard";
 function App() {
   const [products, setProducts] = useState([]);
 
+  const apiEndpoint = "https://dummyjson.com/products";
+  const skip = 0;
+  const limit = 10;
+  const apiURL = apiEndpoint + "?skip=" + skip + "&limit=" + limit;
+
   // function to fetch all products details from API
   const fetchProducts = () => {
     axios
-      .get("https://dummyjson.com/products")
+      .get(apiURL)
       .then((response) => {
         // console.log(response.data);
         setProducts(response.data.products);
@@ -21,7 +26,7 @@ function App() {
   // call fetchProducts method with the help of useEffect
   useEffect(() => {
     fetchProducts();
-  }, []);
+  });
 
   const displayProducts = products.map((product, index) => {
     return <ProductCard product={product} key={index} />;
