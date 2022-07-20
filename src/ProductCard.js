@@ -14,13 +14,6 @@ function ProductCard(props) {
           <span> {product.title}</span>
         </div>
       </div>
-
-      {/* <div>
-        <span>{product.title} - </span>
-        <span>{product.price} - </span>
-        <span>{product.brand} </span>
-        <img src={product.thumbnail} alt={product.title} />
-      </div> */}
     </div>
   );
 }
