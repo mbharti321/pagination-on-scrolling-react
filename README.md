@@ -8,4 +8,3 @@
   
 - Implement pagination while scrolling the page and add the next 5 data to the page when we reach at bottom of the page on scroll
 
-- **kit karosl: for data grid view**
