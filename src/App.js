@@ -30,8 +30,10 @@ function App() {
 
   const scrollToEnd = () => {
     console.log("scrollToEnd");
-    setSkip(previousSkip => previousSkip + limit);
-    setLimit(5);
+    setSkip((previousSkip) => previousSkip + limit);
+    if (limit !== 5) {
+      setLimit(5);
+    }
   };
 
   window.onscroll = function () {
@@ -44,6 +46,7 @@ function App() {
     }
   };
 
+  // function to display all the products
   const displayProducts = products.map((product, index) => {
     return <ProductCard product={product} key={index} />;
   });

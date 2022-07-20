@@ -3,9 +3,9 @@ export const appContainerStyle = {
   justifyContent: "space-between",
   alignItems: "flex-start",
   flexWrap: "wrap",
-  width: "80%",
+  width: "90%",
   margin: "auto",
-  height: "90%",
+  // height: "90%",
 };
 
 export const productCardStyle = {
