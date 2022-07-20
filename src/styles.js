@@ -1,16 +1,31 @@
-export const productCardStyle = {
+export const appContainerStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+  flexWrap: "wrap",
+  width: "80%",
   margin: "auto",
-  marginTop: "10px",
-  width: "25%",
+  height: "90%",
+};
+
+export const productCardStyle = {
+  margin: "0.5rem 1rem",
+  maxWidth: "80%",
   backgroundColor: "rgb(234 237 251)",
-  padding: "25px",
+  padding: "15px",
+  height:"315px",
   borderRadius: "10px",
 };
 
 export const imageStyle = {
-  width: "100%",
-  height: "150px",
+  display: "cover",
+  width: "250px",
+  height: "250px",
   borderRadius: "10px",
 };
 
-export const textStyle = { textAlign: "center", padding: "10px" };
+export const textStyle = {
+  textAlign: "center",
+  width: "200px",
+  padding: "10px",
+};

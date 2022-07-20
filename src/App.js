@@ -3,14 +3,14 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import ProductCard from "./ProductCard";
+import { appContainerStyle } from "./styles";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [skip, setSkip] = useState(0);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(15);
 
   const apiEndpoint = "https://dummyjson.com/products";
-  // const apiURL = apiEndpoint + "?skip=" + skip + "&limit=" + limit;
 
   // function to fetch all products details from API
   const fetchProducts = () => {
@@ -30,13 +30,14 @@ function App() {
 
   const scrollToEnd = () => {
     console.log("scrollToEnd");
-    setSkip(skip + 10);
+    setSkip(previousSkip => previousSkip + limit);
+    setLimit(5);
   };
 
   window.onscroll = function () {
     // check if the page has scrolled to the bottom
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
+      window.innerHeight + document.documentElement.scrollTop >=
       document.documentElement.offsetHeight
     ) {
       scrollToEnd();
@@ -49,13 +50,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <center>
-          <h1>Hello World!</h1>
-        </center>
+      <center>
+        <h1>Hello World!</h1>
+      </center>
 
-        {displayProducts}
-      </header>
+      <div style={appContainerStyle}>{displayProducts}</div>
     </div>
   );
 }
