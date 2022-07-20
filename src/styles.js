@@ -12,7 +12,7 @@ export const productCardStyle = {
   margin: "0.5rem 1rem",
   maxWidth: "80%",
   backgroundColor: "rgb(234 237 251)",
-  padding: "25px",
+  padding: "15px",
   height:"315px",
   borderRadius: "10px",
 };

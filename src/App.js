@@ -30,7 +30,8 @@ function App() {
 
   const scrollToEnd = () => {
     console.log("scrollToEnd");
-    setSkip(skip + 10);
+    setSkip(previousSkip => previousSkip + limit);
+    setLimit(5);
   };
 
   window.onscroll = function () {
